@@ -1,0 +1,40 @@
+{
+  "dependencies": {
+    
+    "main.js": {
+      "files": [
+        "scripts/main.js"
+      ],
+      "main": true
+    },
+    
+    "main.css": {
+      "files": [
+        "styles/main.less"
+      ],
+      "main": true
+    },
+    
+    "jquery.js": {
+      "bower": ["jquery"]
+    },
+    "modernizr.js": {
+      "bower": ["modernizr"]
+    },
+
+    "fancybox.js": {
+      "bower": ["fancybox"]
+    },
+    "fancybox.css": {
+      "bower": ["fancybox"]
+    },
+
+    "images": {
+      "bower": ["fancybox"]
+    }
+
+  },
+  "config": {
+    "devUrl": "http://maartendekker.dev"
+  }
+}

@@ -1,0 +1,120 @@
+@viewport{
+    zoom: 1.0;
+    width: extend-to-zoom;
+}
+	
+@-ms-viewport{
+    width: extend-to-zoom;
+    zoom: 1.0;
+}
+
+html {
+	overflow-y: scroll;
+}
+
+body {
+	padding: 0 15px;
+	background: #fafafa;
+}
+
+#page {
+	width: 660px;
+	margin: 0 auto;
+}
+
+#page > header {
+	margin: 24px 0 32px;
+}
+
+.category #page > header {
+	margin: 24px 0 14px;
+}
+
+#page > header h1 {
+	float: left;
+	margin-right: 1em;
+}
+
+#page > header ul {
+	display: inline-block;
+	float: left;
+}
+
+#page > header li {
+	float: left;
+	margin-right: 1em;
+}
+
+#page > header li.active a {
+	text-decoration: underline;
+}
+
+.grid .item {
+	position: relative;
+	float: left;
+	overflow: hidden;
+	width: 150px;
+	height: 150px;
+	margin: 0 15px 15px 0;
+	background: #ccc url('../images/bg-grid-item.jpg') no-repeat;
+	background-size: 150px 150px;
+}
+
+.grid .item .label {
+	position: absolute;
+	bottom: -100px;
+	right: 0;
+	color: #fff;
+	padding: 1px 3px 3px 4px;
+	background: #666;
+}
+
+.grid .item:hover .label {
+	bottom: 0;
+}
+
+.grid .item.paging {
+	text-align: center;
+	background: #ccc url('../images/bg-grid-item.jpg') no-repeat;
+	background-size: 150px 150px;
+}
+
+.grid .paging .sign {
+	position: absolute;
+	display: block;
+	width: 120px;
+	height: 120px;
+	top: 50%;
+	left: 50%;
+	margin: -60px 0 0 -60px;
+	color: #eee;
+	font-size: 120px;
+	line-height: 1;
+}
+
+.grid .paging .less .sign {
+	line-height: 0.9;
+}
+
+.grid .paging a {
+	display: block;
+	position: relative;
+	width: 150px;
+	height: 150px;
+	text-decoration: none;
+}
+
+.content {
+	margin-right: 15px;
+	border-top: 2px solid #FFD700;
+}
+
+.infonews .content {
+	border-color: #00f;
+}
+
+.cf:after {
+    content:"";
+    display:table;
+    clear:both;
+}
