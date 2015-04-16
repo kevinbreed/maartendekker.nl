@@ -1,5 +1,6 @@
 set :stage, :staging
 set :deploy_to, '/domains/kevinbreed.nl/md/'
+set :branch, 'develop'
 
 # Simple Role Syntax
 # ==================
