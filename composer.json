@@ -46,7 +46,11 @@
     "johnpbloch/wordpress": "4.1.1",
     "wpackagist-plugin/custom-taxonomy-order-ne": "~2.6",
     "wpackagist-plugin/wp-no-category-base": "~1.1",
-    "wpackagist-plugin/wp-retina-2x": "~3.2"
+    "wpackagist-plugin/wp-retina-2x": "~3.2",
+    "wp-cli/wp-cli": "0.18.*"
+  },
+  "require-dev": {
+    "anahkiasen/rocketeer": "~2.2"
   },
   "extra": {
     "installer-paths": {
