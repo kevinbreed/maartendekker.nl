@@ -25,7 +25,7 @@ class JsonManifest {
     if (file_exists($manifest_path)) {
       $this->manifest = json_decode(file_get_contents($manifest_path), true);
     } else {
-      $this->manifest = [];
+      $this->manifest = array();
     }
   }
 
@@ -64,7 +64,8 @@ function asset_path($filename) {
   }
 
   if (WP_ENV !== 'development' && array_key_exists($file, $manifest->get())) {
-    return $dist_path . $directory . $manifest->get()[$file];
+    $manArray = $manifest->get();
+    return $dist_path . $directory . $manArray[$file];
   } else {
     return $dist_path . $directory . $file;
   }
@@ -78,15 +79,15 @@ function bower_map_to_cdn($dependency, $fallback) {
     $bower = new JsonManifest($bower_path);
   }
 
-  $templates = [
+  $templates = array(
     'google' => '//ajax.googleapis.com/ajax/libs/%name%/%version%/%file%'
-  ];
+  );
 
   $version = $bower->getPath('dependencies.' . $dependency['name']);
 
   if (isset($version) && preg_match('/^(\d+\.){2}\d+$/', $version)) {
-    $search = ['%name%', '%version%', '%file%'];
-    $replace = [$dependency['name'], $version, $dependency['file']];
+    $search = array('%name%', '%version%', '%file%');
+    $replace = array($dependency['name'], $version, $dependency['file']);
     return str_replace($search, $replace, $templates[$dependency['cdn']]);
   } else {
     return $fallback;
@@ -107,11 +108,11 @@ function assets() {
   if (!is_admin() && current_theme_supports('jquery-cdn')) {
     wp_deregister_script('jquery');
 
-    wp_register_script('jquery', bower_map_to_cdn([
+    wp_register_script('jquery', bower_map_to_cdn(array(
       'name' => 'jquery',
       'cdn' => 'google',
       'file' => 'jquery.min.js'
-    ], asset_path('scripts/jquery.js')), [], null, true);
+    ), asset_path('scripts/jquery.js')), array(), null, true);
 
     add_filter('script_loader_src', __NAMESPACE__ . '\\jquery_local_fallback', 10, 2);
   }
@@ -120,10 +121,10 @@ function assets() {
     wp_enqueue_script('comment-reply');
   }
 
-  wp_enqueue_script('modernizr', asset_path('scripts/modernizr.js'), [], null, true);
+  wp_enqueue_script('modernizr', asset_path('scripts/modernizr.js'), array(), null, true);
   wp_enqueue_script('jquery');
-  wp_enqueue_script('sage_js', asset_path('scripts/main.js'), [], null, true);
-  wp_enqueue_script('fancybox', asset_path('scripts/fancybox.js'), [], null, true);
+  wp_enqueue_script('sage_js', asset_path('scripts/main.js'), array(), null, true);
+  wp_enqueue_script('fancybox', asset_path('scripts/fancybox.js'), array(), null, true);
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);
 

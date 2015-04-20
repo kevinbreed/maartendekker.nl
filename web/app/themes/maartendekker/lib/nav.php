@@ -32,11 +32,11 @@ class NavWalker extends \Walker_Nav_Menu {
   }
 
   // @codingStandardsIgnoreStart
-  function start_lvl(&$output, $depth = 0, $args = []) {
+  function start_lvl(&$output, $depth = 0, $args = array()) {
     $output .= "\n<ul class=\"dropdown-menu\">\n";
   }
 
-  function start_el(&$output, $item, $depth = 0, $args = [], $id = 0) {
+  function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
     $item_html = '';
     parent::start_el($item_html, $item, $depth, $args);
 
@@ -105,7 +105,7 @@ class NavWalker extends \Walker_Nav_Menu {
  * Remove the id="" on nav menu items
  */
 function nav_menu_args($args = '') {
-  $nav_menu_args = [];
+  $nav_menu_args = array();
   $nav_menu_args['container'] = false;
 
   if (!$args['items_wrap']) {

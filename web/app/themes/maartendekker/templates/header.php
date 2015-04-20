@@ -1,6 +1,6 @@
 <?php 
-  use Roots\Sage\Nav\NavWalker; 
-  use Roots\Sage\Titles;
+	use Roots\Sage\Nav\NavWalker; 
+	use Roots\Sage\Titles;
 
   $menuLocations = get_nav_menu_locations();
   $menuItems = wp_get_nav_menu_items($menuLocations['primary_navigation']);
