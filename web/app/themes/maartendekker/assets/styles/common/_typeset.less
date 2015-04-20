@@ -1,0 +1,195 @@
+body {
+    /* Narrow sans serif stack */
+    font-family: "Liberation Serif", "Nimbus Roman No 9 L", "FreeSerif", "Hoefler Text", Times, "Times New Roman", serif;
+    font-size: 100%;
+    line-height: 1.15;
+    color: #333;
+}
+
+#page > header h1 {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+#page > header h1 a {
+    color: #333;
+}
+
+#page > header a {
+    text-decoration: none;
+}
+
+#page > header a:hover {
+    text-decoration: underline;
+}
+
+#page > header li a {
+    color: #00f;
+}
+
+#page > header li+li a {
+    color: #FFD700;
+}
+
+#page > header li+li+li a {
+    color: #f00;
+}
+
+.typeset h1,
+.typeset h2,
+.typeset h3,
+.typeset h4,
+.typeset h5,
+.typeset h6 {
+    line-height: 1.178em;
+    margin: 0.75em 0 0.238em 0;
+    font-style: italic;
+}
+
+.typeset h1+p, 
+.typeset h2+p, 
+.typeset h3+p, 
+.typeset h4+p, 
+.typeset h5+p, 
+.typeset h6+p {
+    margin-top: 0;
+}
+
+.typeset h1 {
+    text-decoration: underline;
+    font-weight: bold;
+    font-style: normal;
+}
+.typeset h2 { 
+    font-weight: bold; 
+    font-style: normal; 
+}
+
+.typeset p {
+    margin: 1em 1.777em 1em 0;
+}
+
+.typeset b, .typeset strong {
+    font-weight: bold;
+}
+
+.typeset i, .typeset em {
+    font-style: italic;
+}
+
+.typeset u {
+    font-style: underline;
+}
+
+.typeset sup {
+    vertical-align: super;
+    font-size: 0.75em;
+}
+
+.typeset sub {
+    vertical-align: sub;
+    font-size: 0.75em;
+}
+
+.typeset q:before {
+    content: "“";
+}
+
+.typeset q:after {
+    content: "”";
+}
+
+.typeset blockquote {
+    font-style: italic;
+    margin: 0 1.777em;
+}
+
+.typeset blockquote p {
+    margin-bottom: 0.563em;
+}
+
+.typeset footer {
+    font-style: normal;
+    margin-left: 0.422em;
+}
+
+.typeset ul {
+    margin: 1em 1.777em 1em 0;
+    padding: 0 0 0 1.333em;
+}
+
+.typeset ul li {
+    position: relative;
+    margin-left: 1em;
+}
+
+.typeset ul li:before {
+    position: absolute;
+    top: 0;
+    left: -0.922em;
+    bottom: 0;
+    content: "•";
+}
+
+.typeset ul ul {
+    margin: 0.317em 0;
+}
+
+/* ol counters, max nesting level is 5 */
+.typeset ol { counter-reset: li-1; }
+.typeset ol ol { counter-reset: li-2; }
+.typeset ol ol ol { counter-reset: li-3; }
+.typeset ol ol ol ol { counter-reset: li-4; }
+.typeset ol ol ol ol ol { counter-reset: li-5; }
+.typeset ol li:before { counter-increment: li-1; content: counter(li-1) "."; }
+.typeset ol ol li:before { counter-increment: li-2; content: counter(li-2) "."; }
+.typeset ol ol ol li:before { counter-increment: li-3; content: counter(li-3) "."; }
+.typeset ol ol ol ol li:before { counter-increment: li-4; content: counter(li-4) "."; }
+.typeset ol ol ol ol ol li:before { counter-increment: li-5; content: counter(li-5) "."; }
+
+.typeset ol { 
+    margin: 1em 1.777em 1em 0; 
+}
+
+.typeset ol ol {
+    margin: 0.317em 0;
+}
+
+/* I'm going to restrict this to just two numbers */
+.typeset ol li:before {
+    position: absolute;
+    display: block;
+    width: 2em;
+    left: -2.369em;
+    text-align: right;
+}
+
+.typeset ol li {
+    position: relative;
+    margin: 0 0 0 2.369em;
+}
+
+.typeset .intro {
+    font-size: 1.166em;
+    margin-right: 0;
+}
+
+.typeset .note {
+    position: relative;
+    padding-top: 0.178em;
+    font-size: 0.85em;
+    border-top: 1px solid #333;
+}
+
+.typeset .note .mark {
+    position: absolute;
+    top: 0;
+    left: 0.1em;
+    bottom: 0;
+    padding-top: 0.2em;
+}
+
+.typeset .note .mark + span {
+    display: inline-block;
+    padding-left: 2em;
+}
