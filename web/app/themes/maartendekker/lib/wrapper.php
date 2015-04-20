@@ -72,7 +72,7 @@ function sage_edit_title ($title, $sep)
   }
 
   // normal pages
-  $title = get_the_title() . " $sep " . get_bloginfo('name');
+  $title =  strtolower(\Roots\Sage\Titles\title()) . " $sep " . get_bloginfo('name');
 
   // category pages
   if (is_category()) {
