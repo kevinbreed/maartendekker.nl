@@ -166,4 +166,12 @@ EOT;
   <?php endif; ?>
 </div>
 
+<?php else : ?>
+
+  <article class="content typeset">
+    <p>
+      <?php _e('Sorry, no results were found.', 'sage'); ?> 
+    </p>
+  </article>
+
 <?php endif; ?>
