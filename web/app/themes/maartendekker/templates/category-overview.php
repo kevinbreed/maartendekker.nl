@@ -114,6 +114,7 @@ $selectNonEmptyCategories = <<<EOT
     p.ID = tr.object_id
     and tr.term_taxonomy_id = sub.term_id
     and p.post_date = sub.max_date
+  order by term_order
   limit $offset, $maxItems
 EOT;
 
