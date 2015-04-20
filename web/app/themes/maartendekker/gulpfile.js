@@ -42,7 +42,7 @@ var project = manifest.getProjectGlobs();
 // CLI options
 var enabled = {
   // Enable static asset revisioning when `--production`
-  rev: argv.production,
+  rev: false,//argv.production,
   // Disable source maps when `--production`
   maps: !argv.production,
   // Fail styles task on error when `--production`
